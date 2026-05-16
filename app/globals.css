@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0e0c0a;
+  --bg-soft: #161311;
+  --cream: #f6efde;
+  --tomato: #b21f1f;
+  --olive: #6b7c3a;
+  --gold: #c5a25a;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-feature-settings: "ss01", "kern";
+}
+
+::selection {
+  background: rgba(178, 31, 31, 0.5);
+  color: #fff;
+}
+
+@layer components {
+  .container-edge {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-gold;
+  }
+
+  .heading-display {
+    @apply font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-6xl;
+  }
+
+  .heading-section {
+    @apply font-display text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl;
+  }
+
+  .body-lead {
+    @apply text-cream-200/85 text-base leading-relaxed sm:text-lg;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ease-smooth focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
+  }
+
+  .btn-primary {
+    @apply btn bg-tomato text-white shadow-[0_10px_30px_-12px_rgba(178,31,31,0.65)] hover:bg-tomato-bright hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply btn border border-cream-100/20 bg-white/[0.04] text-cream-100 backdrop-blur hover:bg-white/[0.08] hover:border-cream-100/40;
+  }
+
+  .btn-ghost {
+    @apply btn text-cream-100/85 hover:text-cream-50;
+  }
+
+  .btn-gold {
+    @apply btn bg-gold text-bg shadow-[0_10px_30px_-12px_rgba(197,162,90,0.6)] hover:bg-gold-soft hover:-translate-y-0.5;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/5 bg-bg-card/80 backdrop-blur transition-all duration-300 ease-smooth;
+  }
+
+  .card-hover {
+    @apply hover:border-white/10 hover:shadow-elev hover:-translate-y-0.5;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-24 md:py-28;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-cream-100/15 to-transparent;
+  }
+}
+
+/* Subtle filmic grain overlay for premium feel */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.35;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Mobile sticky CTA bar spacing */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  main {
+    padding-bottom: 84px;
+  }
+}

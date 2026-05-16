@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizzeria Napoli Oetz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>NAPOLI OETZ</h1>
+</section>
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<nav id="sidebar">
+  <a href="#menu">Speisekarte</a>
+  <a href="#contact">Kontakt</a>
+  <a href="#allergene">Allergene</a>
+  <a href="#about">Über uns</a>
+  <a href="#info">Info</a>
+</nav>
+
+<!-- SPEISEKARTE -->
+<section id="menu" class="section">
+<h2>Speisekarte</h2>
+
+<div class="menu-box">
+
+<h3>PIZZE (groß)</h3>
+
+<p>MARGHERITA (A, C, G) – €10,90</p>
+<p>FUNGHI (A, C, G) – €11,90</p>
+<p>SALAMI (A, C, G, L, M) – €11,90</p>
+<p>SALAMI PICANTE (A, C, G, L, M) – €13,90</p>
+<p>PARMA (A, C, G, L) – €11,90</p>
+<p>TONNO (A, C, D, G) – €13,90</p>
+<p>GORGONZOLA (A, C, G) – €13,90</p>
+<p>PROSCIUTTO FUNGHI (A, C, G) – €13,90</p>
+<p>CALZONE (A, C, F, G) – €12,90</p>
+<p>HAWAII (A, C, F, G) – €12,90</p>
+<p>SALERNO (A, C, F, G, L, M) – €12,90</p>
+<p>DIAVOLO (A, C, G, L, M) – €13,90</p>
+<p>SIZILIANA (A, C, D, F, G) – €13,90</p>
+<p>ROMEO (A, C, G, L, M) – €13,90</p>
+
+<p>MIX FORMAGGI (A, C, G) – €12,90</p>
+<p>SPINACCI (A, C, G) – €12,90</p>
+<p>SALAMI FUNGHI (A, C, G, L, M) – €12,90</p>
+<p>PRIMAVERA (A, C, F, G, L, M) – €12,90</p>
+<p>CAPRICCIOSA (A, C, F, G, L, M) – €13,90</p>
+<p>GIGANTE (A, C, D, F, G, L, M) – €13,90</p>
+<p>VEGETARIA (A, C, G) – €13,90</p>
+<p>PARADISO (A, C, F, G) – €13,90</p>
+<p>FELLINI (A, C, F, G) – €13,90</p>
+
+<p>POPEYE (A, C, F, G) – €13,90</p>
+<p>GINO PIERRE (A, C, G, L, M) – €13,90</p>
+<p>MILANO (A, C, D, F, G, L, M) – €13,90</p>
+<p>FRUTTI DI MARE (A, C, D, G, R) – €14,90</p>
+<p>TYROLIA (A, C, G, L, M) – €13,90</p>
+<p>CALZONE RUSTICALE (A, C, G, L, M) – €13,90</p>
+<p>TOSCANA (A, C, G, L, M) – €13,90</p>
+<p>LAS BECIA (A, C, F, G, L, M) – €13,90</p>
+<p>PIZZA ÖTZI (A, C, G, L, M) – €13,90</p>
+<p>DEL PIERO (A, C, F, G, L, M) – €13,90</p>
+<p>PALERMO (A, C, F, G, L, M) – €13,90</p>
+<p>FLORENZA (A, C, F, G, L, M) – €13,90</p>
+
+<p>DELLA CASA (A, C, G, L, M) – €13,90</p>
+<p>KEBAB PIZZA (A, C, G, L, M) – €13,90</p>
+<p>COUNTRY (A, C, G, L, M) – €13,90</p>
+<p>NAPOLI (A, C, G, L, M) – €13,90</p>
+<p>CAPELLO (A, C, G, L, M) – €15,90</p>
+
+<h3>GETRÄNKE</h3>
+
+<p>COCA COLA / FANTA / SPRITE 0,5 l – €3,70</p>
+<p>COCA COLA / FANTA / SPRITE 0,33 l Dose – €3,20</p>
+<p>ALMDUDLER – €2,90</p>
+<p>MINERALWASSER – €2,00</p>
+<p>ENERGYDRINK – €3,50</p>
+
+<p>ESPRESSO – €2,40</p>
+<p>CAPPUCCINO – €3,00</p>
+<p>LATTE MACCHIATO – €3,20</p>
+
+</div>
+</section>
+
+<section id="contact" class="section alt">
+<h2>Kontakt</h2>
+<p>📞 +43 650 2915795</p>
+<button onclick="callRestaurant()">Anrufen</button>
+<button onclick="openMaps()">Route</button>
+</section>
+
+<section id="allergene" class="section">
+<h2>Allergene</h2>
+<p>A - Glutenhaltige Getreide</p>
+<p>B - Krebstiere</p>
+<p>C - Ei</p>
+<p>D - Fische</p>
+<p>G - Milch</p>
+<p>M - Senf</p>
+</section>
+
+<section id="about" class="section alt">
+<h2>Über uns</h2>
+<p>Frische Pizza, Kebab und Burger direkt in Oetz.</p>
+<p>Schnell zubereitet und ideal zum Mitnehmen oder vor Ort.</p>
+</section>
+
+<section id="info" class="section">
+<h2>Info</h2>
+<p>📍 Oetz</p>
+<p>🕒 11:00 – 23:00 täglich</p>
+<p>Alle Speisen auch zum Mitnehmen.</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
