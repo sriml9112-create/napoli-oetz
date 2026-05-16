@@ -1,11 +1,3 @@
-/**
- * Zentrale Stammdaten von Napoli Oetz.
- * Bearbeite Werte hier — die gesamte Seite zieht sich daraus.
- *
- * Mit "// REVIEW:" markierte Felder sollten vom Betreiber vor dem Launch
- * noch einmal bestaetigt werden.
- */
-
 export const restaurant = {
   name: "Napoli Oetz",
   tagline: "Pizza, Döner & italienische Spezialitäten",
@@ -15,7 +7,6 @@ export const restaurant = {
   region: "Tirol",
   country: "Österreich",
 
-  // Echte Adresse — vom Betreiber bestaetigt.
   address: {
     street: "Hauptstraße 29",
     streetExtra: "",
@@ -31,11 +22,7 @@ export const restaurant = {
     tel: "+436502915795",
   },
 
-  // Keine offiziell bekannte E-Mail-Adresse — Kontakt erfolgt ausschliesslich
-  // ueber Telefon. Falls der Betreiber spaeter eine Adresse bekannt gibt,
-  // hier ergaenzen (z. B. email: "..." ) und in den Komponenten anzeigen.
   email: null,
-
   domain: "napoli-oetz.com",
   url: "https://www.napoli-oetz.com",
 
@@ -56,28 +43,22 @@ export const restaurant = {
     dineIn: true,
     takeaway: true,
     delivery: false,
-    reservations: null, // REVIEW: bitte vom Betreiber bestätigen.
+    reservations: null,
     familyFriendly: true,
     parkingNearby: true,
   },
 
-  // Echte Inhaberdaten — werden im Impressum verwendet.
-  owner: {
+  operator: {
     name: "Mesut Gül",
     uid: "ATU69675201",
     activity: "Buffets und Imbißstuben",
     legalFormStartDate: "01.07.2015",
-    // REVIEW: Firmenbuchnummer und Firmenbuchgericht — falls vorhanden ergaenzen.
-    firmenbuch: "",
-    firmenbuchgericht: "",
   },
 
-  // Wird von den "Route oeffnen"-Buttons genutzt.
   mapsQuery: "Pizzeria Napoli, Hauptstraße 29, 6433 Oetz, Tirol",
   mapsEmbedQuery: "Pizzeria+Napoli+Hauptstrasse+29+6433+Oetz+Tirol",
 
   social: {
-    // REVIEW: Echte Links ergaenzen, falls vorhanden.
     facebook: "",
     instagram: "",
   },

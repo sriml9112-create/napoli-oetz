@@ -68,13 +68,17 @@ export default function MenuExplorer() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <label className="relative block w-full sm:max-w-sm">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-cream-200/50" />
+            {!query && (
+              <span className="pointer-events-none absolute left-9 top-1/2 -translate-y-1/2 text-base text-cream-200/40 sm:text-sm">
+                In Karte suchen...
+              </span>
+            )}
             <input
               type="search"
               inputMode="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="In Karte suchen..."
-              className="min-h-11 w-full rounded-full border border-white/10 bg-white/[0.04] py-2 pl-9 pr-9 text-base text-cream-50 placeholder:text-cream-200/40 focus:border-tomato/40 focus:outline-none focus:ring-2 focus:ring-tomato/20 sm:text-sm"
+              className="min-h-11 w-full rounded-full border border-white/10 bg-white/[0.04] py-2 pl-9 pr-9 text-base text-cream-50 focus:border-tomato/40 focus:outline-none focus:ring-2 focus:ring-tomato/20 sm:text-sm"
               aria-label="Speisekarte durchsuchen"
             />
             {query && (
@@ -113,7 +117,7 @@ export default function MenuExplorer() {
 
         {q && (
           <div className="mt-2 text-xs text-cream-200/60">
-            {totalResults} Treffer fuer &ldquo;{query}&rdquo;
+            {totalResults} Treffer für &ldquo;{query}&rdquo;
           </div>
         )}
       </div>
@@ -122,14 +126,14 @@ export default function MenuExplorer() {
         {filteredMenu.length === 0 ? (
           <div className="rounded-2xl border border-white/10 bg-bg-card/60 p-8 text-center">
             <p className="text-cream-100/85">
-              Keine Treffer fuer <strong>&ldquo;{query}&rdquo;</strong>.
+              Keine Treffer für <strong>&ldquo;{query}&rdquo;</strong>.
             </p>
             <button
               type="button"
               onClick={() => setQuery("")}
               className="btn-secondary mx-auto mt-4"
             >
-              Suche zuruecksetzen
+              Suche zurücksetzen
             </button>
           </div>
         ) : (

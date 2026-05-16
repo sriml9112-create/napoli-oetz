@@ -18,19 +18,49 @@ const sections = [
     title: "Aus der Küche",
     description: "Was bei uns frisch zubereitet auf den Tisch kommt.",
     items: [
-      { src: "/images/hallo.jpg", alt: "Pizza halb-halb — Margherita und Salami", primary: true },
-      { src: "/images/pizza.jpg", alt: "Kebab-Pizza aus dem Hause Napoli" },
-      { src: "/images/pide.jpg", alt: "Pide auf Holzbrett" },
-      { src: "/images/kebabteller.jpg", alt: "Döner-Teller mit Pommes und Salat" },
+      {
+        src: "/images/hallo.jpg",
+        alt: "Pizza halb-halb — Margherita und Salami",
+        caption: "Pizza halb-halb — Margherita und Salami",
+        primary: true,
+      },
+      {
+        src: "/images/pizza.jpg",
+        alt: "Kebab-Pizza aus dem Hause Napoli",
+        caption: "Kebab-Pizza",
+      },
+      {
+        src: "/images/pide.jpg",
+        alt: "Pide auf Holzbrett",
+        caption: "Pide auf Holzbrett",
+      },
+      {
+        src: "/images/kebabteller.jpg",
+        alt: "Döner-Teller mit Pommes und Salat",
+        caption: "Döner-Teller mit Pommes und Salat",
+      },
     ],
   },
   {
     title: "Restaurant & Atmosphäre",
     description: "Ein Blick in unser Lokal in Oetz.",
     items: [
-      { src: "/images/napoli-hero.png", alt: "Napoli Oetz — Restaurantansicht", primary: true },
-      { src: "/images/bier.jpg", alt: "Erfrischende Getränke" },
-      { src: "/images/pommes.jpg", alt: "Pommes Frites — knusprige Beilage" },
+      {
+        src: "/images/napoli-hero.png",
+        alt: "Napoli Oetz — Außenansicht",
+        caption: "Pizzeria Napoli Oetz — Außenansicht",
+        primary: true,
+      },
+      {
+        src: "/images/bier.jpg",
+        alt: "Erfrischende Getränke",
+        caption: "Getränke",
+      },
+      {
+        src: "/images/pommes.jpg",
+        alt: "Pommes Frites — knusprige Beilage",
+        caption: "Pommes Frites",
+      },
     ],
   },
 ];
@@ -96,6 +126,11 @@ export default function GaleriePage() {
                       className="object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.04]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg/85 to-transparent p-3 sm:p-4">
+                      <span className="text-xs font-semibold text-cream-50 sm:text-sm">
+                        {it.caption}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>

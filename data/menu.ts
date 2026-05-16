@@ -2,9 +2,7 @@
  * Echte Speisekarte für Napoli Oetz.
  *
  * Preise, Zutaten und Allergene wurden 1:1 vom Betreiber übernommen.
- * Wenn `priceOnRequest: true` gesetzt ist, wird der Preis nicht ausgegeben
- * (mit Hinweis „Preis bitte prüfen"). Diese Positionen muss der Betreiber vor
- * Veröffentlichung bestätigen.
+ * Wenn `priceOnRequest: true` gesetzt ist, wird kein fixer Preis ausgegeben.
  */
 
 export type MenuItem = {
@@ -13,7 +11,7 @@ export type MenuItem = {
   description?: string;
   /** Preis in EUR — entfällt, wenn `priceOnRequest: true`. */
   price?: number;
-  /** True = Preis auf Anfrage / bitte vom Betreiber bestätigen. */
+  /** True = Preis auf Anfrage. */
   priceOnRequest?: boolean;
   allergens?: string[];
   badges?: ("vegetarisch" | "vegan" | "scharf" | "neu" | "beliebt")[];
@@ -230,6 +228,6 @@ export function formatPrice(price: number): string {
 }
 
 export function priceLabel(item: MenuItem): string {
-  if (item.priceOnRequest || item.price == null) return "Preis bitte prüfen";
+  if (item.priceOnRequest || item.price == null) return "auf Anfrage";
   return formatPrice(item.price);
 }

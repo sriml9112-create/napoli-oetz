@@ -9,11 +9,32 @@ import SectionHeading from "@/components/ui/SectionHeading";
 // Bildauswahl bewusst auf vorhandene Fotos beschraenkt; hallo.jpg (halb-halb
 // Pizza) bekommt die Hauptkachel, weil es das ansprechendste Pizzafoto ist.
 const tiles = [
-  { src: "/images/hallo.jpg", alt: "Pizza halb-halb — Margherita und Salami", primary: true },
-  { src: "/images/napoli-hero.png", alt: "Pizzeria Napoli Oetz — Restaurantansicht" },
-  { src: "/images/kebabteller.jpg", alt: "Döner-Teller mit Pommes und Salat" },
-  { src: "/images/pide.jpg", alt: "Pide auf Holzbrett" },
-  { src: "/images/pizza.jpg", alt: "Kebab-Pizza aus dem Hause Napoli" },
+  {
+    src: "/images/hallo.jpg",
+    alt: "Pizza halb-halb — Margherita und Salami",
+    caption: "Pizza halb-halb",
+    primary: true,
+  },
+  {
+    src: "/images/napoli-hero.png",
+    alt: "Pizzeria Napoli Oetz — Außenansicht",
+    caption: "Pizzeria Napoli Oetz",
+  },
+  {
+    src: "/images/kebabteller.jpg",
+    alt: "Döner-Teller mit Pommes und Salat",
+    caption: "Döner-Teller",
+  },
+  {
+    src: "/images/pide.jpg",
+    alt: "Pide auf Holzbrett",
+    caption: "Pide auf Holzbrett",
+  },
+  {
+    src: "/images/pizza.jpg",
+    alt: "Kebab-Pizza aus dem Hause Napoli",
+    caption: "Kebab-Pizza",
+  },
 ];
 
 export default function GalleryPreview() {
@@ -58,6 +79,11 @@ export default function GalleryPreview() {
                 className="object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.04]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg/85 to-transparent p-3">
+                <span className="text-xs font-semibold text-cream-50 sm:text-sm">
+                  {t.caption}
+                </span>
+              </div>
             </motion.div>
           ))}
         </div>

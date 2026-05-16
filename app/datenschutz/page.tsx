@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { AlertTriangle } from "lucide-react";
 import { restaurant } from "@/data/restaurant";
 
 export const metadata: Metadata = {
@@ -24,17 +23,6 @@ export default function DatenschutzPage() {
           </h1>
         </header>
 
-        <div className="mt-6 flex items-start gap-3 rounded-2xl border border-gold/30 bg-gold/10 p-4 text-sm text-cream-100/90">
-          <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
-          <p>
-            <strong className="text-cream-50">Hinweis:</strong> Dies ist eine
-            allgemein gehaltene Mustererklärung und ersetzt keine
-            individuelle Rechtsberatung. Bei Einbindung weiterer Drittdienste
-            (z. B. Analytics, Reservierungs-Tools) sollte dieser Text vom
-            Betreiber entsprechend ergänzt werden.
-          </p>
-        </div>
-
         <section className="mt-10 space-y-6 text-cream-100/90">
           <div>
             <h2 className="font-display text-2xl text-cream-50">
@@ -43,13 +31,11 @@ export default function DatenschutzPage() {
             <p className="mt-3">
               Verantwortlich für die Datenverarbeitung auf dieser Website ist:
               <br />
-              Pizzeria Napoli — Inhaber: {restaurant.owner.name}
+              Pizzeria Napoli — Inhaber: {restaurant.operator.name}
               <br />
               {restaurant.address.full}
               <br />
               Telefon: {restaurant.phone.display}
-              <br />
-              Keine offizielle E-Mail bekannt; Kontakt bitte telefonisch.
             </p>
           </div>
 
@@ -58,9 +44,9 @@ export default function DatenschutzPage() {
               Allgemeines zur Datenverarbeitung
             </h3>
             <p className="mt-2">
-              Wir behandeln Ihre personenbezogenen Daten vertraulich und
-              entsprechend der gesetzlichen Datenschutzvorschriften
-              (insbesondere DSGVO und österreichisches DSG).
+              Wir behandeln personenbezogene Daten vertraulich und entsprechend
+              der gesetzlichen Datenschutzvorschriften, insbesondere der DSGVO
+              und des österreichischen Datenschutzgesetzes.
             </p>
           </div>
 
@@ -69,37 +55,30 @@ export default function DatenschutzPage() {
               Server-Logfiles
             </h3>
             <p className="mt-2">
-              Beim Aufruf dieser Website werden vom Hosting-Provider technische
-              Daten (z. B. IP-Adresse, Zeitpunkt des Zugriffs, aufgerufene
-              Seite) verarbeitet, um den sicheren Betrieb der Website zu
-              gewährleisten. Diese Daten werden nicht mit anderen
-              Datenquellen zusammengeführt. Rechtsgrundlage ist Art. 6 Abs. 1
-              lit. f DSGVO (berechtigtes Interesse).
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-display text-xl text-cream-50">Kontaktaufnahme</h3>
-            <p className="mt-2">
-              Wenn Sie uns telefonisch kontaktieren, werden Ihre Angaben zur
-              Bearbeitung der Anfrage verarbeitet. Rechtsgrundlage ist Art. 6
-              Abs. 1 lit. b DSGVO (vorvertragliche/vertragliche Maßnahmen)
-              bzw. lit. f DSGVO (berechtigtes Interesse).
+              Beim Aufruf dieser Website werden technische Daten wie
+              IP-Adresse, Zeitpunkt des Zugriffs und aufgerufene Seite
+              verarbeitet, um den sicheren Betrieb der Website zu ermöglichen.
+              Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
             </p>
           </div>
 
           <div>
             <h3 className="font-display text-xl text-cream-50">
-              Cookies & Tracking
+              Kontaktaufnahme
             </h3>
             <p className="mt-2">
-              Diese Website setzt technisch notwendige Cookies ein. Sofern
-              optionale Cookies oder Drittdienste (z. B. Google Maps,
-              Analytics) eingebunden werden, holen wir hierfür Ihre
-              Einwilligung ein.
+              Wenn Sie uns telefonisch kontaktieren, werden Ihre Angaben zur
+              Bearbeitung der Anfrage verarbeitet. Rechtsgrundlage ist Art. 6
+              Abs. 1 lit. b DSGVO bzw. Art. 6 Abs. 1 lit. f DSGVO.
             </p>
-            <p className="mt-2 text-cream-200/70">
-              Aktuell wird keine eingebettete Kartenansicht geladen. Die
+          </div>
+
+          <div>
+            <h3 className="font-display text-xl text-cream-50">
+              Cookies und externe Links
+            </h3>
+            <p className="mt-2">
+              Diese Website setzt nur technisch notwendige Cookies ein.
               Route-Buttons führen erst nach aktivem Anklicken zu externen
               Kartenanbietern.
             </p>

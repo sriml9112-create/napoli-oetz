@@ -180,11 +180,6 @@ export default function KontaktPage() {
                 </div>
               </div>
             </div>
-
-            <p className="mt-4 text-xs text-cream-200/55">
-              Eine offizielle E-Mail-Adresse ist aktuell nicht hinterlegt — bitte
-              wenden Sie sich für Anfragen telefonisch an uns.
-            </p>
           </section>
         </div>
       </div>

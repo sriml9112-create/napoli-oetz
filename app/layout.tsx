@@ -18,14 +18,16 @@ const display = Playfair_Display({
   display: "swap",
 });
 
-const siteName = restaurant.name;
+const siteName = "Pizzeria Napoli Oetz";
 const siteUrl = restaurant.url;
-const description = `${restaurant.name} – Pizzeria und Imbiss in ${restaurant.city}, ${restaurant.region}. Pizza, Döner, Flammkuchen, Burger, Salate und Getränke. Täglich geöffnet, auch zum Mitnehmen.`;
+const description =
+  "Pizzeria Napoli in Oetz: Pizza, Döner, Burger, Flammkuchen und Getränke. Täglich geöffnet von 11:00 bis 23:00 Uhr. Jetzt Speisekarte ansehen oder Route öffnen.";
+const ogImage = "/images/napoli-hero.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} – Pizzeria in Oetz`,
+    default: "Pizzeria Napoli Oetz | Pizza, Döner & mehr",
     template: `%s | ${siteName}`,
   },
   description,
@@ -54,22 +56,22 @@ export const metadata: Metadata = {
     locale: "de_AT",
     url: siteUrl,
     siteName,
-    title: `${siteName} – Pizzeria in Oetz, Tirol`,
+    title: siteName,
     description,
     images: [
       {
-        url: "/images/napoli-hero.png",
-        width: 1200,
-        height: 630,
-        alt: `${siteName} – italienisches Restaurant in Oetz`,
+        url: ogImage,
+        width: 1199,
+        height: 728,
+        alt: "Außenansicht von Pizzeria Napoli Oetz",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} – Pizzeria in Oetz`,
+    title: siteName,
     description,
-    images: ["/images/napoli-hero.png"],
+    images: [ogImage],
   },
   robots: {
     index: true,
@@ -82,8 +84,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/images/logo.jpg",
-    apple: "/images/logo.jpg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
 };
 
@@ -94,11 +100,11 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-// JSON-LD structured data for local business / restaurant
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  name: restaurant.name,
+  name: "Pizzeria Napoli",
+  alternateName: "Napoli Oetz",
   description,
   servesCuisine: ["Italian", "Pizza", "Kebab", "Burgers"],
   priceRange: "€€",
@@ -129,6 +135,7 @@ const jsonLd = {
     },
   ],
   image: [`${siteUrl}/images/napoli-hero.png`],
+  logo: `${siteUrl}/images/logo.jpg`,
 };
 
 export default function RootLayout({
