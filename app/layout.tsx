@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
@@ -154,6 +155,7 @@ export default function RootLayout({
         <main className="relative z-10">{children}</main>
         <Footer />
         <MobileCTABar />
+        <Analytics />
       </body>
     </html>
   );
