@@ -4,7 +4,18 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Flame } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { findMenuItem, priceLabel, signatureDishIds } from "@/data/menu";
+import { findMenuItem, priceLabel, type MenuItem } from "@/data/menu";
+
+type SignatureDish = MenuItem & { id: string };
+
+const confirmedDishIds = ["pi-margherita", "pi-kebab", "h-doener-pommes"] as const;
+
+const pideDish: SignatureDish = {
+  id: "signature-pide",
+  name: "Pide",
+  description: "Pide aus dem Ofen, herzhaft belegt",
+  priceOnRequest: true,
+};
 
 const imageMap: Record<string, { src: string; alt: string }> = {
   "pi-margherita": {
@@ -19,9 +30,9 @@ const imageMap: Record<string, { src: string; alt: string }> = {
     src: "/images/kebabteller.jpg",
     alt: "Döner-Teller mit Pommes und Salat",
   },
-  "f-napoli": {
-    src: "/images/napoli-hero.png",
-    alt: "Außenansicht von Pizzeria Napoli Oetz",
+  "signature-pide": {
+    src: "/images/pide.jpg",
+    alt: "Pide auf Holzbrett bei Pizzeria Napoli Oetz",
   },
 };
 
@@ -31,9 +42,11 @@ const fallbackImage = {
 };
 
 export default function SignatureDishes() {
-  const dishes = signatureDishIds
+  const dishes: SignatureDish[] = confirmedDishIds
     .map((id) => findMenuItem(id))
-    .filter((d): d is NonNullable<typeof d> => Boolean(d));
+    .filter((d): d is MenuItem => Boolean(d));
+
+  dishes.push(pideDish);
 
   return (
     <section className="section-pad relative bg-bg-soft/60">

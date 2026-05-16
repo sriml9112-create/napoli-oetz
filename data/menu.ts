@@ -212,7 +212,6 @@ export const signatureDishIds = [
   "pi-margherita",
   "pi-kebab",
   "h-doener-pommes",
-  "f-napoli",
 ] as const;
 
 export function findMenuItem(id: string): MenuItem | undefined {
