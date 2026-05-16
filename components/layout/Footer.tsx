@@ -4,7 +4,7 @@ import { restaurant } from "@/data/restaurant";
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 mt-16 border-t border-white/5 bg-bg-soft/80">
+    <footer className="relative z-10 mt-16 border-t border-white/5 bg-bg-soft/80 pb-24 md:pb-0">
       <div className="container-wide grid gap-10 py-14 sm:grid-cols-2 md:grid-cols-4">
         <div>
           <div className="font-display text-2xl text-cream-50">{restaurant.name}</div>
@@ -64,7 +64,7 @@ export default function Footer() {
       <div className="hairline" />
       <div className="container-wide flex flex-col items-center justify-between gap-2 py-6 text-xs text-cream-200/50 sm:flex-row">
         <span>© {new Date().getFullYear()} {restaurant.name}. Alle Rechte vorbehalten.</span>
-        <span>Mit Liebe gebacken in {restaurant.city}, {restaurant.region}.</span>
+        <span>Täglich geöffnet in {restaurant.city}, {restaurant.region}.</span>
       </div>
     </footer>
   );

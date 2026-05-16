@@ -212,7 +212,7 @@ export const menu: MenuCategory[] = [
  */
 export const signatureDishIds = [
   "pi-margherita",
-  "pi-frutti-di-mare",
+  "pi-kebab",
   "h-doener-pommes",
   "f-napoli",
 ] as const;

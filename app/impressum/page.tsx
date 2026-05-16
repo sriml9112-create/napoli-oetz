@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <article className="pb-10 pt-28 sm:pt-36">
+    <article className="pb-10 pt-24 sm:pt-32">
       <div className="container-edge max-w-3xl">
         <header>
           <span className="eyebrow">
@@ -24,35 +24,42 @@ export default function ImpressumPage() {
         <div className="mt-6 flex items-start gap-3 rounded-2xl border border-gold/30 bg-gold/10 p-4 text-sm text-cream-100/90">
           <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
           <p>
-            <strong className="text-cream-50">Platzhalter:</strong> Dieser Text
-            ist ein Vorschlag und muss vor dem Live-Gang vom Betreiber
-            geprüft und mit den vollständigen, korrekten rechtlichen Angaben
-            ergänzt werden (insb. Firmenname, Rechtsform, Firmenbuchnummer,
-            UID-Nummer, Aufsichtsbehörde, Kammerzugehörigkeit, anwendbare
-            Berufsrechtliche Vorschriften).
+            <strong className="text-cream-50">Hinweis:</strong> Einzelne Felder
+            (Firmenbuch, Firmenbuchgericht, Aufsichtsbehörde) sind als
+            &bdquo;bitte prüfen&ldquo; markiert und sollten vom Betreiber vor dem
+            Live-Gang final bestätigt oder ergänzt werden.
           </p>
         </div>
 
-        <section className="prose-content mt-10 space-y-6 text-cream-100/90">
+        <section className="mt-10 space-y-6 text-cream-100/90">
           <div>
             <h2 className="font-display text-2xl text-cream-50">
               Angaben gemäß § 5 ECG und § 25 Mediengesetz
             </h2>
             <p className="mt-3">
-              {restaurant.name}
+              Pizzeria Napoli
+              <br />
+              Inhaber: {restaurant.owner.name}
               <br />
               {restaurant.address.full}
-              <br />
-              Österreich
             </p>
           </div>
 
           <div>
             <h3 className="font-display text-xl text-cream-50">Kontakt</h3>
             <p className="mt-2">
-              Telefon: <a className="underline decoration-gold/40 underline-offset-4 hover:text-cream-50" href={`tel:${restaurant.phone.tel}`}>{restaurant.phone.display}</a>
+              Telefon:{" "}
+              <a
+                className="underline decoration-gold/40 underline-offset-4 hover:text-cream-50"
+                href={`tel:${restaurant.phone.tel}`}
+              >
+                {restaurant.phone.display}
+              </a>
               <br />
-              E-Mail: <span className="text-cream-200/70">auf Anfrage</span>
+              E-Mail:{" "}
+              <span className="text-cream-200/70">
+                Keine offizielle E-Mail bekannt.
+              </span>
               <br />
               Web: {restaurant.url}
             </p>
@@ -60,30 +67,30 @@ export default function ImpressumPage() {
 
           <div>
             <h3 className="font-display text-xl text-cream-50">
-              Unternehmensgegenstand
+              Unternehmensangaben
             </h3>
-            <p className="mt-2">Gastronomie / Pizzeria / Restaurantbetrieb.</p>
-          </div>
-
-          <div>
-            <h3 className="font-display text-xl text-cream-50">
-              Inhaber / Geschäftsführung
-            </h3>
-            <p className="mt-2 text-cream-200/70">
-              [Platzhalter — Inhaber:in bzw. Geschäftsführung eintragen]
+            <p className="mt-2">
+              Tätigkeit: {restaurant.owner.activity}
+              <br />
+              Beginndatum der Rechtsform: {restaurant.owner.legalFormStartDate}
             </p>
           </div>
 
           <div>
             <h3 className="font-display text-xl text-cream-50">
-              Firmenbuch / UID
+              Umsatzsteuer-Identifikationsnummer
+            </h3>
+            <p className="mt-2">UID-Nummer: {restaurant.owner.uid}</p>
+          </div>
+
+          <div>
+            <h3 className="font-display text-xl text-cream-50">
+              Firmenbuch
             </h3>
             <p className="mt-2 text-cream-200/70">
-              Firmenbuchnummer: [Platzhalter]
+              Firmenbuchnummer: bitte prüfen
               <br />
-              UID-Nummer: [Platzhalter]
-              <br />
-              Firmenbuchgericht: [Platzhalter]
+              Firmenbuchgericht: bitte prüfen
             </p>
           </div>
 
@@ -92,18 +99,20 @@ export default function ImpressumPage() {
               Aufsichtsbehörde / Kammer
             </h3>
             <p className="mt-2 text-cream-200/70">
-              Aufsichtsbehörde gemäß ECG: [Platzhalter — z. B. zuständige
-              Bezirkshauptmannschaft]
+              Aufsichtsbehörde gemäß ECG: zuständige Bezirkshauptmannschaft
+              (bitte prüfen)
               <br />
               Kammer: Wirtschaftskammer Tirol, Fachgruppe Gastronomie
               <br />
-              Berufsrechtliche Vorschriften: Gewerbeordnung (GewO),
-              abrufbar unter ris.bka.gv.at
+              Berufsrechtliche Vorschriften: Gewerbeordnung (GewO), abrufbar
+              unter ris.bka.gv.at
             </p>
           </div>
 
           <div>
-            <h3 className="font-display text-xl text-cream-50">Haftungsausschluss</h3>
+            <h3 className="font-display text-xl text-cream-50">
+              Haftungsausschluss
+            </h3>
             <p className="mt-2">
               Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine
               Haftung für die Inhalte externer Links. Für den Inhalt der
@@ -136,9 +145,9 @@ export default function ImpressumPage() {
           <div>
             <h3 className="font-display text-xl text-cream-50">Urheberrecht</h3>
             <p className="mt-2">
-              Alle Inhalte dieser Website (Texte, Bilder, Grafiken)
-              unterliegen dem Urheberrecht. Eine Verwendung außerhalb dieser
-              Website bedarf der schriftlichen Zustimmung von {restaurant.name}.
+              Alle Inhalte dieser Website (Texte, Bilder, Grafiken) unterliegen
+              dem Urheberrecht. Eine Verwendung außerhalb dieser Website
+              bedarf der schriftlichen Zustimmung von {restaurant.name}.
             </p>
           </div>
         </section>

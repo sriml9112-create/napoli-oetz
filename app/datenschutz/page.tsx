@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function DatenschutzPage() {
   return (
-    <article className="pb-10 pt-28 sm:pt-36">
+    <article className="pb-10 pt-24 sm:pt-32">
       <div className="container-edge max-w-3xl">
         <header>
           <span className="eyebrow">
@@ -27,11 +27,11 @@ export default function DatenschutzPage() {
         <div className="mt-6 flex items-start gap-3 rounded-2xl border border-gold/30 bg-gold/10 p-4 text-sm text-cream-100/90">
           <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
           <p>
-            <strong className="text-cream-50">Platzhalter:</strong> Diese
-            Datenschutzerklärung ist ein allgemein gehaltener Mustertext und
-            ersetzt keine individuelle Rechtsberatung. Bitte vor Live-Gang von
-            der Inhaberin / dem Inhaber prüfen und ggf. ergänzen (eingesetzte
-            Dienste, Tracking, Cookie-Consent, Reservierungs-Tools etc.).
+            <strong className="text-cream-50">Hinweis:</strong> Dies ist eine
+            allgemein gehaltene Mustererklärung und ersetzt keine
+            individuelle Rechtsberatung. Bei Einbindung weiterer Drittdienste
+            (z. B. Analytics, Reservierungs-Tools) sollte dieser Text vom
+            Betreiber entsprechend ergänzt werden.
           </p>
         </div>
 
@@ -43,13 +43,13 @@ export default function DatenschutzPage() {
             <p className="mt-3">
               Verantwortlich für die Datenverarbeitung auf dieser Website ist:
               <br />
-              {restaurant.name}
+              Pizzeria Napoli — Inhaber: {restaurant.owner.name}
               <br />
               {restaurant.address.full}
               <br />
               Telefon: {restaurant.phone.display}
               <br />
-              E-Mail: auf Anfrage
+              Keine offizielle E-Mail bekannt; Kontakt bitte telefonisch.
             </p>
           </div>
 
@@ -72,20 +72,19 @@ export default function DatenschutzPage() {
               Beim Aufruf dieser Website werden vom Hosting-Provider technische
               Daten (z. B. IP-Adresse, Zeitpunkt des Zugriffs, aufgerufene
               Seite) verarbeitet, um den sicheren Betrieb der Website zu
-              gewährleisten. Diese Daten werden nicht mit anderen Datenquellen
-              zusammengeführt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
-              (berechtigtes Interesse).
+              gewährleisten. Diese Daten werden nicht mit anderen
+              Datenquellen zusammengeführt. Rechtsgrundlage ist Art. 6 Abs. 1
+              lit. f DSGVO (berechtigtes Interesse).
             </p>
           </div>
 
           <div>
             <h3 className="font-display text-xl text-cream-50">Kontaktaufnahme</h3>
             <p className="mt-2">
-              Wenn Sie uns über das Kontaktformular, per E-Mail oder telefonisch
-              kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage
-              verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO
-              (vorvertragliche/vertragliche Maßnahmen) bzw. lit. f DSGVO
-              (berechtigtes Interesse).
+              Wenn Sie uns telefonisch kontaktieren, werden Ihre Angaben zur
+              Bearbeitung der Anfrage verarbeitet. Rechtsgrundlage ist Art. 6
+              Abs. 1 lit. b DSGVO (vorvertragliche/vertragliche Maßnahmen)
+              bzw. lit. f DSGVO (berechtigtes Interesse).
             </p>
           </div>
 
@@ -95,19 +94,19 @@ export default function DatenschutzPage() {
             </h3>
             <p className="mt-2">
               Diese Website setzt technisch notwendige Cookies ein. Sofern
-              optionale Cookies oder Drittdienste (z. B. Google Maps, Analytics)
-              eingebunden werden, holen wir hierfür Ihre Einwilligung ein.
+              optionale Cookies oder Drittdienste (z. B. Google Maps,
+              Analytics) eingebunden werden, holen wir hierfür Ihre
+              Einwilligung ein.
             </p>
             <p className="mt-2 text-cream-200/70">
-              [Platzhalter — falls Google Maps oder andere Drittanbieter
-              eingebunden werden, hier ergänzen.]
+              Aktuell wird keine eingebettete Kartenansicht geladen. Die
+              Route-Buttons führen erst nach aktivem Anklicken zu externen
+              Kartenanbietern.
             </p>
           </div>
 
           <div>
-            <h3 className="font-display text-xl text-cream-50">
-              Ihre Rechte
-            </h3>
+            <h3 className="font-display text-xl text-cream-50">Ihre Rechte</h3>
             <p className="mt-2">
               Sie haben das Recht auf Auskunft, Berichtigung, Löschung,
               Einschränkung der Verarbeitung, Datenübertragbarkeit und

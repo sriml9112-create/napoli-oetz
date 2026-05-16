@@ -1,26 +1,29 @@
 /**
- * Central restaurant data. Edit values here and the whole site updates.
- * Values marked with REVIEW: should be confirmed by the owner before launch.
+ * Zentrale Stammdaten von Napoli Oetz.
+ * Bearbeite Werte hier — die gesamte Seite zieht sich daraus.
+ *
+ * Mit "// REVIEW:" markierte Felder sollten vom Betreiber vor dem Launch
+ * noch einmal bestaetigt werden.
  */
 
 export const restaurant = {
   name: "Napoli Oetz",
-  tagline: "Pizza, Pasta & italienische Spezialitäten",
+  tagline: "Pizza, Döner & italienische Spezialitäten",
   shortDescription:
-    "Familiengeführte Pizzeria im Herzen von Oetz im Ötztal. Frische italienische Küche, knusprige Pizza aus dem Steinofen und herzliche Gastfreundschaft.",
+    "Pizzeria und Imbiss im Herzen von Oetz im Ötztal. Frisch zubereitete Pizza, Döner, Flammkuchen, Burger, Salate und herzliche Gastfreundschaft.",
   city: "Oetz",
   region: "Tirol",
   country: "Österreich",
 
-  // REVIEW: Confirm full street address with the owner.
+  // Echte Adresse — vom Betreiber bestaetigt.
   address: {
-    street: "Hauptstraße",
+    street: "Hauptstraße 29",
     streetExtra: "",
     postalCode: "6433",
     city: "Oetz",
     region: "Tirol",
     country: "Österreich",
-    full: "Hauptstraße, 6433 Oetz, Tirol, Österreich",
+    full: "Hauptstraße 29, 6433 Oetz, Österreich",
   },
 
   phone: {
@@ -28,9 +31,9 @@ export const restaurant = {
     tel: "+436502915795",
   },
 
-  // Keine offiziell bekannte E-Mail-Adresse — Kontakt erfolgt ausschließlich
-  // über Telefon. Falls der Betreiber später eine Adresse bekannt gibt,
-  // hier ergänzen (z. B. email: "..." ) und in den Komponenten anzeigen.
+  // Keine offiziell bekannte E-Mail-Adresse — Kontakt erfolgt ausschliesslich
+  // ueber Telefon. Falls der Betreiber spaeter eine Adresse bekannt gibt,
+  // hier ergaenzen (z. B. email: "..." ) und in den Komponenten anzeigen.
   email: null,
 
   domain: "napoli-oetz.com",
@@ -52,18 +55,29 @@ export const restaurant = {
   features: {
     dineIn: true,
     takeaway: true,
-    delivery: false, // REVIEW
-    reservations: true, // REVIEW
+    delivery: false,
+    reservations: null, // REVIEW: bitte vom Betreiber bestätigen.
     familyFriendly: true,
     parkingNearby: true,
   },
 
-  // Used by the "Route öffnen" buttons. Searches Google Maps for the name + city.
-  mapsQuery: "Pizzeria Napoli Oetz, Tirol",
-  mapsEmbedQuery: "Pizzeria+Napoli+Oetz+Tirol",
+  // Echte Inhaberdaten — werden im Impressum verwendet.
+  owner: {
+    name: "Mesut Gül",
+    uid: "ATU69675201",
+    activity: "Buffets und Imbißstuben",
+    legalFormStartDate: "01.07.2015",
+    // REVIEW: Firmenbuchnummer und Firmenbuchgericht — falls vorhanden ergaenzen.
+    firmenbuch: "",
+    firmenbuchgericht: "",
+  },
+
+  // Wird von den "Route oeffnen"-Buttons genutzt.
+  mapsQuery: "Pizzeria Napoli, Hauptstraße 29, 6433 Oetz, Tirol",
+  mapsEmbedQuery: "Pizzeria+Napoli+Hauptstrasse+29+6433+Oetz+Tirol",
 
   social: {
-    // REVIEW: Add real links if available.
+    // REVIEW: Echte Links ergaenzen, falls vorhanden.
     facebook: "",
     instagram: "",
   },

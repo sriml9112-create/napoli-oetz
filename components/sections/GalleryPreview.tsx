@@ -6,12 +6,14 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 
+// Bildauswahl bewusst auf vorhandene Fotos beschraenkt; hallo.jpg (halb-halb
+// Pizza) bekommt die Hauptkachel, weil es das ansprechendste Pizzafoto ist.
 const tiles = [
-  { src: "/images/pizza.jpg", alt: "Pizza aus dem Steinofen", span: "row-span-2" },
-  { src: "/images/napoli-hero.png", alt: "Restaurant Napoli Oetz", span: "" },
-  { src: "/images/kebabteller.jpg", alt: "Spezialitäten des Hauses", span: "" },
-  { src: "/images/bier.jpg", alt: "Getränke und Bier", span: "" },
-  { src: "/images/pommes.jpg", alt: "Beilagen", span: "" },
+  { src: "/images/hallo.jpg", alt: "Pizza halb-halb — Margherita und Salami", primary: true },
+  { src: "/images/napoli-hero.png", alt: "Pizzeria Napoli Oetz — Restaurantansicht" },
+  { src: "/images/kebabteller.jpg", alt: "Döner-Teller mit Pommes und Salat" },
+  { src: "/images/pide.jpg", alt: "Pide auf Holzbrett" },
+  { src: "/images/pizza.jpg", alt: "Kebab-Pizza aus dem Hause Napoli" },
 ];
 
 export default function GalleryPreview() {
@@ -22,7 +24,7 @@ export default function GalleryPreview() {
           <SectionHeading
             eyebrow="Galerie"
             title="Ein Blick in unser Restaurant."
-            subtitle="Frisches Essen, einladende Atmosphäre und italienische Lebensfreude — gleich nebenan in Oetz."
+            subtitle="Echte Bilder aus Küche und Lokal — ehrlich beschriftet, damit man sieht, was auf den Tisch kommt."
           />
           <Link href="/galerie" className="btn-secondary self-start sm:self-end">
             Alle Bilder
@@ -30,20 +32,22 @@ export default function GalleryPreview() {
           </Link>
         </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:grid-rows-2">
+        <div className="mt-10 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:grid-rows-2 sm:gap-3">
           {tiles.map((t, idx) => (
             <motion.div
               key={t.src + idx}
-              initial={{ opacity: 0, scale: 0.97 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{
-                duration: 0.55,
+                duration: 0.5,
                 ease: [0.22, 1, 0.36, 1],
                 delay: idx * 0.05,
               }}
-              className={`group relative overflow-hidden rounded-2xl border border-white/5 ${
-                idx === 0 ? "col-span-2 row-span-2 aspect-square sm:aspect-auto" : "aspect-[4/3]"
+              className={`group relative overflow-hidden rounded-xl border border-white/5 sm:rounded-2xl ${
+                t.primary
+                  ? "col-span-2 row-span-2 aspect-square sm:aspect-auto"
+                  : "aspect-[4/3]"
               }`}
             >
               <Image
@@ -51,7 +55,7 @@ export default function GalleryPreview() {
                 alt={t.alt}
                 fill
                 sizes="(min-width: 768px) 25vw, 50vw"
-                className="object-cover transition-transform duration-700 ease-smooth group-hover:scale-105"
+                className="object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.04]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             </motion.div>

@@ -4,9 +4,9 @@ import { allergens, restaurant } from "@/data/restaurant";
 import MenuExplorer from "@/components/menu/MenuExplorer";
 
 export const metadata: Metadata = {
-  title: "Speisekarte – Pizza, Pasta, Burger & mehr",
+  title: "Speisekarte – Pizza, Döner, Burger & mehr",
   description:
-    "Die komplette Speisekarte von Pizzeria Napoli Oetz. Knapp 40 Pizzasorten aus dem Steinofen, Hauptgerichte, Burger, Flammkuchen, Salate, Getränke und vieles mehr. Auch zum Mitnehmen.",
+    "Die komplette Speisekarte von Pizzeria Napoli Oetz. Pizze, Hauptgerichte, Burger, Snacks, Flammkuchen, Salate, Getränke und vieles mehr. Auch zum Mitnehmen.",
   alternates: { canonical: "/speisekarte" },
   openGraph: {
     title: "Speisekarte – Pizzeria Napoli Oetz",
@@ -27,8 +27,8 @@ export default function SpeisekartePage() {
             Unsere Karte.
           </h1>
           <p className="body-lead mt-4">
-            Pizza aus dem Steinofen, herzhafte Hauptgerichte, frische
-            Flammkuchen, Salate und Getränke. Alle Speisen auch zum Mitnehmen.
+            Pizze, herzhafte Hauptgerichte, Flammkuchen, Salate, Getränke und
+            Snacks. Alle Speisen auch zum Mitnehmen.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={`tel:${restaurant.phone.tel}`} className="btn-primary">

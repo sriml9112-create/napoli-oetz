@@ -5,36 +5,39 @@ import { Phone, UtensilsCrossed } from "lucide-react";
 import { restaurant } from "@/data/restaurant";
 
 export const metadata: Metadata = {
-  title: "Galerie – Eindrücke aus Pizzeria Napoli Oetz",
+  title: "Galerie — Eindrücke aus Pizzeria Napoli Oetz",
   description:
-    "Bilder aus dem Pizzeria Napoli Oetz – unsere Pizza aus dem Steinofen, italienische Spezialitäten und einladende Atmosphäre.",
+    "Bilder aus Pizzeria Napoli Oetz — Pizza, Döner, Pide und einladende Atmosphäre im Herzen von Oetz.",
   alternates: { canonical: "/galerie" },
 };
 
+// Beschreibungen ehrlich gewählt — keine generische "Pizza"-Behauptung dort,
+// wo es eigentlich Kebabpizza, Pide oder Döner ist.
 const sections = [
   {
     title: "Aus der Küche",
     description: "Was bei uns frisch zubereitet auf den Tisch kommt.",
     items: [
-      { src: "/images/pizza.jpg", alt: "Frische Pizza aus dem Steinofen" },
-      { src: "/images/kebabteller.jpg", alt: "Spezialitäten des Hauses" },
-      { src: "/images/pide.jpg", alt: "Gebackene Spezialität" },
-      { src: "/images/pommes.jpg", alt: "Beilagen und Snacks" },
+      { src: "/images/hallo.jpg", alt: "Pizza halb-halb — Margherita und Salami", primary: true },
+      { src: "/images/pizza.jpg", alt: "Kebab-Pizza aus dem Hause Napoli" },
+      { src: "/images/pide.jpg", alt: "Pide auf Holzbrett" },
+      { src: "/images/kebabteller.jpg", alt: "Döner-Teller mit Pommes und Salat" },
     ],
   },
   {
     title: "Restaurant & Atmosphäre",
     description: "Ein Blick in unser Lokal in Oetz.",
     items: [
-      { src: "/images/napoli-hero.png", alt: "Napoli Oetz – Restaurantansicht" },
+      { src: "/images/napoli-hero.png", alt: "Napoli Oetz — Restaurantansicht", primary: true },
       { src: "/images/bier.jpg", alt: "Erfrischende Getränke" },
+      { src: "/images/pommes.jpg", alt: "Pommes Frites — knusprige Beilage" },
     ],
   },
 ];
 
 export default function GaleriePage() {
   return (
-    <article className="pb-10 pt-28 sm:pt-36">
+    <article className="pb-10 pt-24 sm:pt-32">
       <div className="container-edge">
         <header className="max-w-3xl">
           <span className="eyebrow">
@@ -55,17 +58,17 @@ export default function GaleriePage() {
             </Link>
             <a href={`tel:${restaurant.phone.tel}`} className="btn-secondary">
               <Phone className="h-4 w-4" />
-              Tisch reservieren
+              Jetzt anrufen
             </a>
           </div>
         </header>
 
-        <div className="mt-16 space-y-16">
+        <div className="mt-14 space-y-14 sm:mt-16 sm:space-y-16">
           {sections.map((section, sIdx) => (
             <section key={section.title}>
               <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <h2 className="font-display text-3xl text-cream-50 sm:text-4xl">
+                  <h2 className="font-display text-2xl text-cream-50 sm:text-3xl md:text-4xl">
                     {section.title}
                   </h2>
                   <p className="mt-1 text-sm text-cream-200/70">{section.description}</p>
@@ -75,12 +78,14 @@ export default function GaleriePage() {
                 </span>
               </div>
 
-              <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+              <div className="mt-6 grid grid-cols-2 gap-2.5 md:grid-cols-3 md:gap-3 lg:grid-cols-4">
                 {section.items.map((it, idx) => (
                   <div
                     key={it.src + idx}
-                    className={`group relative overflow-hidden rounded-2xl border border-white/5 ${
-                      idx === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-[4/5]"
+                    className={`group relative overflow-hidden rounded-xl border border-white/5 sm:rounded-2xl ${
+                      it.primary
+                        ? "col-span-2 row-span-2 aspect-square"
+                        : "aspect-[4/5]"
                     }`}
                   >
                     <Image
@@ -88,7 +93,7 @@ export default function GaleriePage() {
                       alt={it.alt}
                       fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
-                      className="object-cover transition-transform duration-700 ease-smooth group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.04]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   </div>
@@ -99,8 +104,8 @@ export default function GaleriePage() {
         </div>
 
         <p className="mt-12 text-xs text-cream-200/45">
-          Weitere Bilder können einfach in <code className="rounded bg-white/5 px-1.5 py-0.5">public/images</code> hinzugefügt
-          und auf dieser Seite eingebunden werden.
+          Die Bilder zeigen vorhandene Aufnahmen und werden bewusst nur dort
+          eingesetzt, wo sie inhaltlich passen.
         </p>
       </div>
     </article>

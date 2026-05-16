@@ -8,25 +8,25 @@ import { restaurant } from "@/data/restaurant";
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden pb-20 pt-32 sm:items-center sm:pb-28 sm:pt-40">
+    <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden pb-28 pt-24 sm:items-center sm:pb-28 sm:pt-40">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <Image
           src="/images/napoli-hero.png"
-          alt="Napoli Oetz – italienisches Restaurant"
+          alt="Außenansicht von Pizzeria Napoli Oetz"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-[52%_50%] sm:object-center"
         />
-        {/* Cinematic overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/80 via-bg/55 to-bg" />
-        <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_30%_30%,rgba(178,31,31,0.18)_0%,transparent_60%)]" />
+        {/* Cinematic overlays — stronger on mobile for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/80 via-bg/60 to-bg sm:from-bg/75 sm:via-bg/50" />
+        <div className="absolute inset-0 bg-[radial-gradient(70%_50%_at_25%_25%,rgba(178,31,31,0.18)_0%,transparent_60%)]" />
       </div>
 
       <div className="container-wide relative w-full">
         <motion.span
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="eyebrow"
@@ -36,30 +36,30 @@ export default function Hero() {
         </motion.span>
 
         <motion.h1
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
-          className="heading-display mt-4 max-w-3xl text-cream-50"
+          className="heading-display mt-4 max-w-3xl text-balance text-cream-50"
         >
-          Echt italienisch.{" "}
-          <span className="text-gold">Aus dem Herzen</span> von Oetz.
+          Napoli Oetz.{" "}
+          <span className="text-gold">Pizza & Imbiss</span> an der Hauptstraße.
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
-          className="body-lead mt-5 max-w-xl text-cream-100/85"
+          className="body-lead mt-4 max-w-xl text-cream-100/85 sm:mt-5"
         >
-          Knusprige Pizza aus dem Steinofen, frische Pasta und italienische
-          Klassiker — täglich für Sie zubereitet im {restaurant.name}.
+          Pizza, Döner, Flammkuchen, Burger und Salate — täglich frisch
+          zubereitet im {restaurant.name}.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.26 }}
-          className="mt-8 flex flex-wrap items-center gap-3"
+          className="mt-7 flex flex-wrap items-center gap-2.5 sm:mt-8 sm:gap-3"
         >
           <Link href="/speisekarte" className="btn-primary">
             <UtensilsCrossed className="h-4 w-4" />
@@ -83,10 +83,10 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.34 }}
-          className="mt-10 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs text-cream-100/80 backdrop-blur sm:text-sm"
+          className="mt-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-xs text-cream-100/85 backdrop-blur sm:mt-10 sm:text-sm"
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-olive-light opacity-60" />
@@ -98,7 +98,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Bottom fade */}
+      {/* Bottom fade for clean transition */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-bg" />
     </section>
   );

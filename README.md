@@ -1,16 +1,16 @@
-# Napoli Oetz – Website
+# Napoli Oetz - Website
 
-Premium Next.js website for **Pizzeria Napoli Oetz** (napoli-oetz.com).
+Next.js website for **Pizzeria Napoli Oetz** (www.napoli-oetz.com).
 
-## Tech stack
+## Tech Stack
 
 - Next.js 14 (App Router)
 - TypeScript
 - Tailwind CSS
-- Framer Motion (subtile Animationen)
-- Lucide React (Icons)
+- Framer Motion
+- Lucide React
 
-## Local development
+## Local Development
 
 ```bash
 npm install
@@ -19,88 +19,81 @@ npm run dev
 
 Open http://localhost:3000.
 
-## Production build
+## Production Build
 
 ```bash
 npm run build
 npm start
 ```
 
-## Projektstruktur
+## Project Structure
 
-```
+```text
 app/
-  layout.tsx          # Root layout, SEO, JSON-LD
-  page.tsx            # Homepage
-  speisekarte/page.tsx# Echte Karte mit Suche + Sticky-Navigation
+  layout.tsx           # Root layout, SEO, JSON-LD
+  page.tsx             # Homepage
+  speisekarte/page.tsx # Real menu with search and category navigation
   galerie/page.tsx
-  kontakt/page.tsx    # Nur Telefon + Route (keine E-Mail)
-  impressum/page.tsx  # Platzhalter — vom Betreiber prüfen
-  datenschutz/page.tsx# Platzhalter — vom Betreiber prüfen
-  not-found.tsx
+  kontakt/page.tsx     # Phone and route only
+  impressum/page.tsx
+  datenschutz/page.tsx
   sitemap.ts
   robots.ts
   globals.css
 components/
-  layout/             # Header, Footer, MobileCTABar
-  sections/           # Homepage-Sektionen
-  menu/               # MenuCard, MenuExplorer (Suche + Sticky-Nav)
-  ui/                 # SectionHeading
+  layout/              # Header, Footer, MobileCTABar
+  sections/            # Homepage sections
+  menu/                # MenuCard, MenuExplorer
+  ui/                  # SectionHeading
 data/
-  restaurant.ts       # Adresse, Telefon, Öffnungszeiten (KEINE E-Mail)
-  menu.ts             # Komplette echte Speisekarte
+  restaurant.ts        # Address, phone, opening hours, owner data
+  menu.ts              # Complete real menu data
 public/
-  images/             # Hero + Speisen/Atmosphäre
-_legacy/              # Originaldateien zur Referenz
+  images/              # Logo, restaurant, food photos
+_legacy/               # Original reference files
 ```
 
-## Kontakt-Konzept
+## Business Data
 
-**Keine E-Mail-Adresse bekannt — Kontakt erfolgt ausschließlich per Telefon.**
-Die früher verwendete Adresse `info@napoli-oetz.com` war erfunden und wurde
-aus allen Stellen entfernt (Footer, Kontakt, Impressum, Datenschutz, JSON-LD,
-Kontaktformular).
+- Restaurant: Napoli Oetz / Pizzeria Napoli
+- Betreiber/Inhaber: Mesut Gül
+- Adresse: Hauptstraße 29, 6433 Oetz, Österreich
+- Telefon: +43 650 2915795
+- Öffnungszeiten: täglich 11:00 - 23:00
+- UID: ATU69675201
+- Tätigkeit: Buffets und Imbißstuben
+- Beginndatum der Rechtsform: 01.07.2015
 
-Sobald der Betreiber eine offizielle Adresse bestätigt, einfach in
-`data/restaurant.ts` ergänzen (`email: "..."`) und die ausgeblendeten
-Mail-Felder wieder einblenden.
+## Contact Strategy
 
-## Vom Betreiber noch zu bestätigen
+No confirmed official email address is available. The website uses phone contact
+and route links only. If the owner later confirms an official email address,
+add it deliberately in `data/restaurant.ts` and update the visible contact
+surfaces at the same time.
 
-In `data/restaurant.ts` mit `REVIEW:` markiert:
+## Owner Confirmation Items
 
-- **Vollständige Straße + Hausnummer** (aktuell „Hauptstraße, 6433 Oetz")
-- **Lieferung ja/nein** (aktuell `false`)
-- **Reservierungen ja/nein** (aktuell `true`)
-- **Social-Media-Links** (Facebook/Instagram leer)
-- **Impressum-Daten**: Firmenbuchnummer, UID, Inhaber:in, Aufsichtsbehörde
-- **Datenschutz**: eingesetzte Drittdienste
+Marked or noted as "bitte prüfen" before launch where applicable:
 
-In `data/menu.ts` mit `priceOnRequest: true` markierte Positionen:
-
-- **Rot Süß** (Wein, 1/8 oder 1/4 l)
-- **Weiß Sauer 1/8 oder 1/4 l** (Grüner Veltliner Variante)
-- **Glutenfreie Pizza**
+- Firmenbuchnummer and Firmenbuchgericht, if applicable
+- Zuständige Aufsichtsbehörde / Bezirkshauptmannschaft
+- Whether any optional third-party services beyond outbound map links are added
+- Menu positions with `priceOnRequest: true`
 
 ## Deployment
 
-### Vercel (empfohlen)
+### Vercel
 
-1. Repo zu GitHub pushen
-2. In Vercel importieren
-3. Domain `napoli-oetz.com` verbinden
-4. Fertig — automatisches SSL, Image Optimization, CDN
-
-### IONOS / sonstiger Node-Host
-
-- **Statischer Export:** `output: "export"` in `next.config.mjs`, dann
-  `next build && next export`. Beachte: `next/image`-Optimierung entfällt.
-- **Node-Hosting:** `npm run build` + `npm start` (Port 3000).
+1. Push the repository to GitHub.
+2. Import it in Vercel.
+3. Connect `www.napoli-oetz.com`.
+4. Deploy with the default Next.js settings.
 
 ## Git
 
 ```bash
+git status
 git add .
-git commit -m "Real menu data + remove invented email"
+git commit -m "Finalize Napoli website for launch"
 git push
 ```

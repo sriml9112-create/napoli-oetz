@@ -20,12 +20,12 @@ const display = Playfair_Display({
 
 const siteName = restaurant.name;
 const siteUrl = restaurant.url;
-const description = `${restaurant.name} – Pizzeria & italienisches Restaurant in ${restaurant.city}, ${restaurant.region}. Knusprige Pizza aus dem Steinofen, frische Pasta und Antipasti. Täglich geöffnet, auch zum Mitnehmen.`;
+const description = `${restaurant.name} – Pizzeria und Imbiss in ${restaurant.city}, ${restaurant.region}. Pizza, Döner, Flammkuchen, Burger, Salate und Getränke. Täglich geöffnet, auch zum Mitnehmen.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} – Pizzeria & Italienisches Restaurant in Oetz`,
+    default: `${siteName} – Pizzeria in Oetz`,
     template: `%s | ${siteName}`,
   },
   description,
@@ -38,10 +38,10 @@ export const metadata: Metadata = {
     "Napoli Oetz",
     "Pizza Ötztal",
     "Restaurant Ötztal",
-    "Italiener Tirol",
     "Mittagessen Oetz",
     "Abendessen Oetz",
-    "Pizza Lieferservice Oetz",
+    "Döner Oetz",
+    "Flammkuchen Oetz",
   ],
   authors: [{ name: siteName }],
   creator: siteName,
@@ -100,7 +100,7 @@ const jsonLd = {
   "@type": "Restaurant",
   name: restaurant.name,
   description,
-  servesCuisine: ["Italian", "Pizza", "Pasta"],
+  servesCuisine: ["Italian", "Pizza", "Kebab", "Burgers"],
   priceRange: "€€",
   url: siteUrl,
   telephone: restaurant.phone.display,
@@ -129,7 +129,6 @@ const jsonLd = {
     },
   ],
   image: [`${siteUrl}/images/napoli-hero.png`],
-  acceptsReservations: restaurant.features.reservations,
 };
 
 export default function RootLayout({

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Car, Clock, MapPin, Navigation } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -13,7 +14,7 @@ export default function Location() {
           <SectionHeading
             eyebrow="Standort"
             title={`Mitten in ${restaurant.city}.`}
-            subtitle="Sie finden uns zentral im Ortskern von Oetz im Ötztal. Parkmöglichkeiten in der Nähe."
+            subtitle="Sie finden uns zentral im Ortskern von Oetz im Ötztal. Für die Anfahrt öffnen Sie die Route direkt in Ihrer Karten-App."
           />
 
           <div className="mt-8 space-y-4 text-cream-100/90">
@@ -42,7 +43,7 @@ export default function Location() {
               <div>
                 <div className="text-sm font-semibold text-cream-50">Anreise</div>
                 <div className="text-sm text-cream-200/85">
-                  Parkmöglichkeiten in unmittelbarer Nähe.
+                  Route per Google Maps oder Apple Maps öffnen.
                 </div>
               </div>
             </div>
@@ -76,17 +77,26 @@ export default function Location() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative h-80 overflow-hidden rounded-3xl border border-white/10 shadow-elev md:h-full md:min-h-[420px]"
+          className="relative min-h-80 overflow-hidden rounded-3xl border border-white/10 shadow-elev md:h-full md:min-h-[420px]"
         >
-          <iframe
-            title={`Karte zu ${restaurant.name}`}
-            src={`https://www.google.com/maps?q=${restaurant.mapsEmbedQuery}&output=embed`}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full grayscale-[35%] contrast-[1.05]"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
+          <Image
+            src="/images/napoli-hero.png"
+            alt="Außenansicht von Pizzeria Napoli Oetz"
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
           />
-          <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-5">
+            <div className="rounded-xl border border-white/10 bg-bg-card/85 p-4 backdrop-blur">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                Pizzeria Napoli
+              </div>
+              <p className="mt-1 text-sm font-medium text-cream-50">
+                {restaurant.address.full}
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

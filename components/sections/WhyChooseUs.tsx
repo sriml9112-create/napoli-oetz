@@ -15,12 +15,12 @@ const reasons = [
   {
     icon: Leaf,
     title: "Frische Zutaten",
-    text: "Wir kochen mit ausgewählten, frischen Produkten — so wie es sich für italienische Küche gehört.",
+    text: "Wir bereiten die Speisen frisch zu und setzen auf einfache, ehrliche Zutaten.",
   },
   {
     icon: Flame,
-    title: "Echter Steinofen",
-    text: "Knusprig, aromatisch, perfekt gebacken: unsere Pizzen kommen direkt aus dem Steinofen.",
+    title: "Heiß und frisch",
+    text: "Pizza, Flammkuchen und Snacks kommen so auf den Tisch, wie man sie bestellt: frisch, warm und unkompliziert.",
   },
   {
     icon: MapPin,
@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
         <SectionHeading
           eyebrow="Warum Napoli"
           title="Gutes Essen. Echte Gastfreundschaft."
-          subtitle="Was uns ausmacht — und warum unsere Gäste immer wieder kommen."
+          subtitle="Was den Besuch im Napoli einfach macht: zentrale Lage, gute Auswahl und direkte telefonische Bestellung."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

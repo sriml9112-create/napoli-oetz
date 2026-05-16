@@ -18,11 +18,7 @@ export default function FinalCTA() {
         >
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-tomato/15 blur-3xl"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-gold/10 blur-3xl"
+            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"
           />
 
           <div className="relative mx-auto max-w-3xl text-center">
@@ -35,7 +31,8 @@ export default function FinalCTA() {
             </h2>
             <p className="body-lead mt-4">
               Rufen Sie uns an, sehen Sie sich unsere Speisekarte an oder kommen
-              Sie einfach vorbei — wir sind täglich für Sie da.
+              Sie direkt vorbei — wir sind täglich von 11:00 bis 23:00 Uhr für
+              Sie da.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <a href={`tel:${restaurant.phone.tel}`} className="btn-primary">

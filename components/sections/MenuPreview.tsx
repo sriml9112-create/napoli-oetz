@@ -21,7 +21,7 @@ const categories = [
   {
     id: "pizze",
     title: "Pizze",
-    description: "Knapp 40 Sorten aus dem Steinofen — vom Klassiker bis zur Hausspezialität.",
+    description: "Knapp 40 Sorten — vom Klassiker bis zur Hausspezialität.",
     icon: Pizza,
   },
   {
@@ -91,8 +91,8 @@ export default function MenuPreview() {
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading
             eyebrow="Speisekarte"
-            title="Pizza, Pasta, Burger & mehr."
-            subtitle="Italienische Klassiker, herzhafte Hauptgerichte und beliebte Snacks — alles unter einem Dach."
+            title="Pizza, Döner, Burger & mehr."
+            subtitle="Pizze, Hauptgerichte, Flammkuchen, Salate, Getränke und beliebte Snacks — alles unter einem Dach."
           />
           <Link href="/speisekarte" className="btn-secondary self-start sm:self-end">
             Komplette Karte
