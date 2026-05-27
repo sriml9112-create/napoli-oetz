@@ -9,9 +9,6 @@ import {
   Flame,
   Salad,
   Coffee,
-  Beer,
-  Wine,
-  GlassWater,
   Sparkles,
   ArrowRight,
 } from "lucide-react";
@@ -50,27 +47,9 @@ const categories = [
   },
   {
     id: "warme-getraenke",
-    title: "Warme Getränke",
-    description: "Italienischer Espresso, Cappuccino und Tee.",
+    title: "Getränke",
+    description: "Kaffee, Bier, Wein, Softdrinks, Säfte und Mineralwasser.",
     icon: Coffee,
-  },
-  {
-    id: "biere",
-    title: "Biere",
-    description: "Zipfer Märzen, Stiegl und Radler — auch alkoholfrei.",
-    icon: Beer,
-  },
-  {
-    id: "weine",
-    title: "Weine",
-    description: "Offene Weiß- und Rotweine im 1/8 oder 1/4 Liter.",
-    icon: Wine,
-  },
-  {
-    id: "alkoholfrei",
-    title: "Alkoholfreie Getränke",
-    description: "Softdrinks, Säfte, Mineralwasser und Energydrink.",
-    icon: GlassWater,
   },
   {
     id: "sonstiges",
@@ -92,7 +71,7 @@ export default function MenuPreview() {
           <SectionHeading
             eyebrow="Speisekarte"
             title="Pizza, Döner, Burger & mehr."
-            subtitle="Pizze, Hauptgerichte, Flammkuchen, Salate, Getränke und beliebte Snacks — alles unter einem Dach."
+            subtitle="Pizze, Hauptgerichte, Flammkuchen, Salate, Getränke und beliebte Snacks — kompakt, frisch und auch zum Mitnehmen."
           />
           <Link href="/speisekarte" className="btn-secondary self-start sm:self-end">
             Komplette Karte
@@ -100,7 +79,7 @@ export default function MenuPreview() {
           </Link>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((c, idx) => {
             const Icon = c.icon;
             return (

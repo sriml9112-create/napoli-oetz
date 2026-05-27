@@ -6,7 +6,7 @@ import { restaurant } from "@/data/restaurant";
 export const metadata: Metadata = {
   title: "Kontakt – Pizzeria Napoli Oetz",
   description:
-    "Kontaktieren Sie Pizzeria Napoli in Oetz. Telefon, Adresse, Öffnungszeiten und Anfahrt. Wir freuen uns auf Ihren Besuch.",
+    "Kontakt zur Pizzeria Napoli Oetz: Telefon, Adresse, Öffnungszeiten und Route zur Hauptstraße 29 in Oetz.",
   alternates: { canonical: "/kontakt" },
 };
 
@@ -112,7 +112,7 @@ export default function KontaktPage() {
               className="btn-primary w-full sm:w-auto"
             >
               <Navigation className="h-4 w-4" />
-              Route in Google Maps öffnen
+              Route öffnen
             </a>
 
             <div className="relative min-h-72 overflow-hidden rounded-2xl border border-white/10 shadow-elev sm:min-h-96">

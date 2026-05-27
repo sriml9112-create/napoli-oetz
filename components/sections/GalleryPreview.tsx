@@ -45,7 +45,7 @@ export default function GalleryPreview() {
           <SectionHeading
             eyebrow="Galerie"
             title="Ein Blick in unser Restaurant."
-            subtitle="Echte Bilder aus Küche und Lokal — ehrlich beschriftet, damit man sieht, was auf den Tisch kommt."
+            subtitle="Frisches Essen, einladende Atmosphäre und Eindrücke aus der Pizzeria in Oetz."
           />
           <Link href="/galerie" className="btn-secondary self-start sm:self-end">
             Alle Bilder

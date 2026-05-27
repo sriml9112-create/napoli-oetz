@@ -59,7 +59,7 @@ export default function Location() {
               className="btn-primary"
             >
               <Navigation className="h-4 w-4" />
-              Route in Google Maps
+              Route öffnen
             </a>
             <a
               href={`https://maps.apple.com/?q=${encodeURIComponent(restaurant.mapsQuery)}`}

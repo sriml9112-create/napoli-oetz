@@ -22,7 +22,7 @@ const display = Playfair_Display({
 const siteName = "Pizzeria Napoli Oetz";
 const siteUrl = restaurant.url;
 const description =
-  "Pizzeria Napoli in Oetz: Pizza, Döner, Burger, Flammkuchen und Getränke. Täglich geöffnet von 11:00 bis 23:00 Uhr. Jetzt Speisekarte ansehen oder Route öffnen.";
+  "Pizzeria Napoli Oetz: Pizza, Döner, Burger, Flammkuchen, Salate, Getränke und Take-away in Oetz. Täglich 11:00–23:00 geöffnet.";
 const ogImage = "/images/napoli-hero.png";
 
 export const metadata: Metadata = {
@@ -35,16 +35,24 @@ export const metadata: Metadata = {
   keywords: [
     "Pizzeria Oetz",
     "Pizza Oetz",
+    "Pizza Ötz",
     "Restaurant Oetz",
+    "Restaurant Ötz",
     "Italienisches Restaurant Oetz",
     "Essen in Oetz",
     "Napoli Oetz",
+    "Pizzeria Napoli Oetz",
     "Pizza Ötztal",
     "Restaurant Ötztal",
+    "Döner Oetz",
+    "Döner Ötz",
+    "Take-away Oetz",
+    "Flammkuchen Oetz",
+    "Burger Oetz",
+    "Speisekarte Napoli Oetz",
     "Mittagessen Oetz",
     "Abendessen Oetz",
-    "Döner Oetz",
-    "Flammkuchen Oetz",
+    "Pizza und Döner in Oetz",
   ],
   authors: [{ name: siteName }],
   creator: siteName,
@@ -103,40 +111,78 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Restaurant",
-  name: "Pizzeria Napoli",
-  alternateName: "Napoli Oetz",
-  description,
-  servesCuisine: ["Italian", "Pizza", "Kebab", "Burgers"],
-  priceRange: "€€",
-  url: siteUrl,
-  telephone: restaurant.phone.display,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: restaurant.address.street,
-    addressLocality: restaurant.address.city,
-    postalCode: restaurant.address.postalCode,
-    addressRegion: restaurant.address.region,
-    addressCountry: "AT",
-  },
-  openingHoursSpecification: [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
+      "@type": ["Restaurant", "LocalBusiness"],
+      "@id": `${siteUrl}/#restaurant`,
+      name: siteName,
+      alternateName: "Pizzeria Napoli",
+      description,
+      servesCuisine: ["Italian", "Pizza", "Kebab", "Fast Food"],
+      priceRange: "€€",
+      url: siteUrl,
+      telephone: restaurant.phone.display,
+      image: [`${siteUrl}/images/napoli-hero.png`],
+      logo: `${siteUrl}/images/logo.jpg`,
+      hasMenu: `${siteUrl}/speisekarte`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: restaurant.address.street,
+        addressLocality: restaurant.address.city,
+        postalCode: restaurant.address.postalCode,
+        addressRegion: restaurant.address.region,
+        addressCountry: "AT",
+      },
+      openingHours: "Mo-Su 11:00-23:00",
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "11:00",
+          closes: "23:00",
+        },
       ],
-      opens: "11:00",
-      closes: "23:00",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: siteName,
+      url: siteUrl,
+      inLanguage: "de-AT",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteUrl}/#breadcrumbs`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Start",
+          item: siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Speisekarte",
+          item: `${siteUrl}/speisekarte`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Kontakt",
+          item: `${siteUrl}/kontakt`,
+        },
+      ],
     },
   ],
-  image: [`${siteUrl}/images/napoli-hero.png`],
-  logo: `${siteUrl}/images/logo.jpg`,
 };
 
 export default function RootLayout({

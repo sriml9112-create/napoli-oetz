@@ -12,12 +12,12 @@ import FinalCTA from "@/components/sections/FinalCTA";
 export const metadata: Metadata = {
   title: "Pizzeria Napoli Oetz | Pizza, Döner & mehr",
   description:
-    "Pizzeria Napoli in Oetz: Pizza, Döner, Burger, Flammkuchen und Getränke. Täglich geöffnet von 11:00 bis 23:00 Uhr. Jetzt Speisekarte ansehen oder Route öffnen.",
+    "Pizzeria Napoli Oetz: Pizza, Döner, Burger, Flammkuchen, Salate, Getränke und Take-away in Oetz. Täglich 11:00–23:00 geöffnet.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Pizzeria Napoli Oetz",
     description:
-      "Pizzeria Napoli in Oetz: Pizza, Döner, Burger, Flammkuchen und Getränke. Täglich geöffnet von 11:00 bis 23:00 Uhr. Jetzt Speisekarte ansehen oder Route öffnen.",
+      "Pizzeria Napoli Oetz: Pizza, Döner, Burger, Flammkuchen, Salate, Getränke und Take-away in Oetz. Täglich 11:00–23:00 geöffnet.",
     url: "https://www.napoli-oetz.com",
     siteName: "Pizzeria Napoli Oetz",
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pizzeria Napoli Oetz",
     description:
-      "Pizzeria Napoli in Oetz: Pizza, Döner, Burger, Flammkuchen und Getränke. Täglich geöffnet von 11:00 bis 23:00 Uhr. Jetzt Speisekarte ansehen oder Route öffnen.",
+      "Pizzeria Napoli Oetz: Pizza, Döner, Burger, Flammkuchen, Salate, Getränke und Take-away in Oetz. Täglich 11:00–23:00 geöffnet.",
     images: ["/images/napoli-hero.png"],
   },
 };

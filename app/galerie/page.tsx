@@ -138,10 +138,6 @@ export default function GaleriePage() {
           ))}
         </div>
 
-        <p className="mt-12 text-xs text-cream-200/45">
-          Die Bilder zeigen vorhandene Aufnahmen und werden bewusst nur dort
-          eingesetzt, wo sie inhaltlich passen.
-        </p>
       </div>
     </article>
   );

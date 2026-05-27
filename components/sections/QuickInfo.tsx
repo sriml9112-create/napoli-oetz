@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Clock, MapPin, Phone, ShoppingBag } from "lucide-react";
 import { restaurant } from "@/data/restaurant";
+import OpeningStatus from "@/components/ui/OpeningStatus";
 
 const items = [
   {
@@ -22,6 +23,7 @@ const items = [
     icon: Clock,
     label: "Öffnungszeiten",
     value: restaurant.hours.summary,
+    status: true,
   },
   {
     icon: ShoppingBag,
@@ -52,9 +54,17 @@ export default function QuickInfo() {
                   <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold/90">
                     {it.label}
                   </div>
-                  <div className="mt-0.5 truncate text-sm font-medium text-cream-50 sm:text-base">
-                    {it.value}
-                  </div>
+                  {it.status ? (
+                    <OpeningStatus
+                      compact
+                      showIcon={false}
+                      className="mt-1 !border-0 !bg-transparent !p-0 !shadow-none"
+                    />
+                  ) : (
+                    <div className="mt-0.5 truncate text-sm font-medium text-cream-50 sm:text-base">
+                      {it.value}
+                    </div>
+                  )}
                 </div>
               </div>
             );

@@ -90,7 +90,6 @@ body {
   }
 }
 
-/* Subtle filmic grain overlay for premium feel */
 .grain::before {
   content: "";
   position: fixed;

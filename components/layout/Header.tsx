@@ -81,7 +81,7 @@ export default function Header() {
             aria-label="Jetzt anrufen"
           >
             <Phone className="h-4 w-4" />
-            Anrufen
+            Jetzt anrufen
           </a>
         </div>
 

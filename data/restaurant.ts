@@ -55,7 +55,7 @@ export const restaurant = {
     legalFormStartDate: "01.07.2015",
   },
 
-  mapsQuery: "Pizzeria Napoli, Hauptstraße 29, 6433 Oetz, Tirol",
+  mapsQuery: "Hauptstraße 29, 6433 Oetz, Österreich",
   mapsEmbedQuery: "Pizzeria+Napoli+Hauptstrasse+29+6433+Oetz+Tirol",
 
   social: {
